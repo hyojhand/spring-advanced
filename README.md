@@ -1,6 +1,6 @@
 # spring-advanced
 
-## [Advanced](https://www.notion.so/advanced)
+## [Advanced](./advanced)
 
 HTTP 요청을 Thread 별로 구분하고, 깊이를 표현하는 **로그 추적기(Log Trace) 구현**
 - **ThreadLocal**을 활용해 필드로 사용하는 traceId 동시성 문제 해결
@@ -10,3 +10,11 @@ HTTP 요청을 Thread 별로 구분하고, 깊이를 표현하는 **로그 추�
 
 <img src="https://user-images.githubusercontent.com/87989933/216826916-208e703f-92a3-40f6-b3e3-68c59b14308b.png" width="80%">
 
+## [Proxy](./proxy)
+- **프록시**를 사용해 기존 코드를 수정하지 않고, 프록시 구현체를 통해 변경에 유연하게 개선한다.
+- **데코레이터 패턴**으로 프록시 체이닝을 통해 부가기능을 추가할 수 있도록 한다.
+
+**동적 프록시** 기술을 사용하여 적용 대상 만큼 프록시 객체를 생성하지 않아도 된다.
+
+- 인터페이스 기반 프록시 : JDK 동적 프록시의 InvocationHandler
+- 구현 클래스 기반 프록시 : CGLIB의 MethodInterceptor
