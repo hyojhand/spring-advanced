@@ -18,3 +18,9 @@ HTTP 요청을 Thread 별로 구분하고, 깊이를 표현하는 **로그 추�
 
 - 인터페이스 기반 프록시 : JDK 동적 프록시의 InvocationHandler
 - 구현 클래스 기반 프록시 : CGLIB의 MethodInterceptor
+
+**프록시 팩토리(Proxy Factory)** 기능으로 CGLIB, JDK 동적 프록시 기술에 의존하지 않고, 동적 프록시를 생성
+
+- **Advice** 로 프록시의 부가 기능 로직을 특정 기술에 종속적이지 않게 사용할 수 있다.
+- **Pointcut** 으로 부가 기능 로직을 어디에 적용할지 필터링한다.
+- 하나의 Advice와 하나의 Pointcut을 가지는 **Advisor** 로 역할과 책임을 명확하게 분리한다.
