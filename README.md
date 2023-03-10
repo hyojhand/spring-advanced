@@ -25,4 +25,10 @@ HTTP 요청을 Thread 별로 구분하고, 깊이를 표현하는 **로그 추�
 - **Pointcut** 으로 부가 기능 로직을 어디에 적용할지 필터링한다.
 - 하나의 Advice와 하나의 Pointcut을 가지는 **Advisor** 로 역할과 책임을 명확하게 분리한다.
 
-**빈 후처리기(BeanPostProcessor)** 를 사용해 프록시를 생성하는 설정파일의 중복되는 코드를 제거한다.
+**빈 후처리기(BeanPostProcessor)** 를 사용해 프록시를 생성하는 설정파일의 중복되는 코드를 제거
+
+gradle에 aop dependency를 추가하면 자동 프록시 생성기인  
+AnnotationAwareAspectJAutoProxyCreator 빈 후처리기가 스프링 Bean에 등록된다.  
+이제 Advisor만 Bean으로 등록하면 Advisor를 찾아서 프록시가 필요한 곳에 프록시를 적용해준다.
+
+**@Aspect 어노테이션**으로 Pointcut과 Advice로 구성되어 있는 Advisor 생성을 지원한다.
